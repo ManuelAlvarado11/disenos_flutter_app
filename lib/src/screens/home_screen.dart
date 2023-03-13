@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_disenos/src/widgets/background.dart';
+import 'package:flutter_disenos/src/widgets/custom_buttom_navigation.dart';
 import 'package:flutter_disenos/src/widgets/page_title.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,6 +18,8 @@ class HomeScreen extends StatelessWidget {
           _HomeBody()
         ],
       ),
+      // Buttom Navigation Bar
+      bottomNavigationBar: const CustomButtomNavigation(),
     );
   }
 }
