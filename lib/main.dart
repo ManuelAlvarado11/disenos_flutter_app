@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       debugShowCheckedModeBanner: false,
-      initialRoute: 'home_screen',
+      initialRoute: 'scroll_desing',
       routes: {
         'basic_desing': (_) => const BasicDesingScreen(),
         'scroll_desing': (_) => const ScrollDesingScreen(),

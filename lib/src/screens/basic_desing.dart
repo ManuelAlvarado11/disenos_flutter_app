@@ -28,6 +28,10 @@ class BasicDesingScreen extends StatelessWidget {
           )
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.close, color: Colors.white),
+        onPressed: () => Navigator.pushNamed(context, 'home_screen'),
+      ),
     );
   }
 }

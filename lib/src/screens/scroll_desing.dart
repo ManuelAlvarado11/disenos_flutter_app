@@ -115,7 +115,9 @@ class Page2 extends StatelessWidget {
       color: const Color(0xff30BAD6),
       child: Center(
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, 'home_screen');
+          },
           style: TextButton.styleFrom(
               backgroundColor: const Color(0xff0098FA),
               shape: const StadiumBorder()),
