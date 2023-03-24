@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: 'scroll_desing',
       routes: {
-        'basic_desing': (_) => const BasicDesingScreen(),
+        'basic_desing': (_) => BasicDesingScreen(),
         'scroll_desing': (_) => const ScrollDesingScreen(),
         'home_screen': (_) => const HomeScreen(),
       },

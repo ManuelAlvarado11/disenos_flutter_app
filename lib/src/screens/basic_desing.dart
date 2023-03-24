@@ -1,32 +1,38 @@
 import 'package:flutter/material.dart';
 
 class BasicDesingScreen extends StatelessWidget {
-  const BasicDesingScreen({Key? key}) : super(key: key);
+  List? boxes = ["box1", "box2", "box3", "box4", "box5", "box6", "box7"];
+
+  BasicDesingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          // Image
-          const FadeInImage(
-            image: AssetImage('assets/landscape.jpg'),
-            placeholder: AssetImage('assets/landscape.jpg'),
-          ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // Image
+            const FadeInImage(
+              image: AssetImage('assets/landscape.jpg'),
+              placeholder: AssetImage('assets/landscape.jpg'),
+            ),
 
-          // Title
-          const Title(),
+            // Title
+            const Title(),
 
-          // Buttons section
-          const ButtonSection(),
+            // Buttons section
+            const ButtonSection(),
 
-          // Description
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: const Text(
-                'Fugiat deserunt dolor dolor aute aute aute minim qui consequat qui id. Exercitation excepteur id nostrud est. Exercitation in dolore ex id culpa. Ad exercitation anim amet nisi in veniam officia sint. Sit mollit cupidatat minim occaecat officia duis ea occaecat fugiat cupidatat ea magna. Ullamco nulla culpa proident proident nisi officia.'),
-          )
-        ],
+            // Description
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: const Text(
+                  'Fugiat deserunt dolor dolor aute aute aute minim qui consequat qui id. Exercitation excepteur id nostrud est. Exercitation in dolore ex id culpa. Ad exercitation anim amet nisi in veniam officia sint. Sit mollit cupidatat minim occaecat officia duis ea occaecat fugiat cupidatat ea magna. Ullamco nulla culpa proident proident nisi officia.'),
+            ),
+
+            _WrapTable(boxes: boxes)
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.close, color: Colors.white),
@@ -110,5 +116,36 @@ class CustomButton extends StatelessWidget {
         Text(text, style: TextStyle(color: Colors.blue.shade400))
       ],
     );
+  }
+}
+
+class _WrapTable extends StatelessWidget {
+  const _WrapTable({
+    Key? key,
+    required this.boxes,
+  }) : super(key: key);
+
+  final List? boxes;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        alignment: Alignment.topCenter,
+        padding: const EdgeInsets.all(15),
+        child: Wrap(
+          children: boxes!.map((box) {
+            return Container(
+              margin: const EdgeInsets.all(10),
+              color: const Color.fromARGB(255, 66, 93, 116),
+              alignment: Alignment.center,
+              height: 100,
+              width: 100,
+              child: Text(
+                box,
+                style: const TextStyle(color: Colors.white),
+              ),
+            );
+          }).toList(),
+        ));
   }
 }
